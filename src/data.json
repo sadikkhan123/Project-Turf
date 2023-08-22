@@ -1,0 +1,71 @@
+[{
+    "id":1,
+        "Name": "City Lawns Turf 1",
+        "turfimages": "https://firebasestorage.googleapis.com/v0/b/turf-managment-system.appspot.com/o/images%20(1).jpeg?alt=media&token=6fad7d1f-a710-4ae3-99f9-d2a4ecbed267",
+        "Address": "34 Parge Nagar City Cawns Puna",
+        "description": "City lawn  turf is one the best football and Cricket turf in puna, located at parge nagar. There are three arena which are perfect fields for  700sq.cm * 700 sq.cm game. City Turf aims to provide a premium sports and turf experience to all sports enthusiasts.",
+        "TimingSlots": ["6am-7am", "7am-8am", "8am-9am", "9am-10am", "10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm", "8pm-9pm", "9pm-10pm"],
+        "price": " per hour 100-/",
+        "notice": "After 7pm charges will be increased for per hour will be 300-/. "
+
+
+    },
+    {
+        "id":2,
+        "Name": "City Lawns Turf 2",
+        "turfimages": "https://firebasestorage.googleapis.com/v0/b/turf-managment-system.appspot.com/o/download.jpeg?alt=media&token=2b67054f-8e47-4b6b-bcad-5dbf0ad52e66",
+        "Address": "34 Parge Nagar City lawns Puna",
+        "description": "City lawn  turf is one the best football and Cricket turf in puna, located at parge nagar. There are three arena which are perfect fields for  700sq.cm * 700 sq.cm game. City Turf aims to provide a premium sports and turf experience to all sports enthusiasts.",
+        "TimingSlots": ["6am-7am", "7am-8am", "8am-9am", "9am-10am", "10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm", "8pm-9pm", "9pm-10pm"],
+        "price": " per hour 150-/",
+        "notice": "After 7pm charges will be increased for per hour will be 350-/. "
+
+
+    },
+    {
+        "id":3,
+        "Name": "City Lawns Turf 3",
+        "turfimages": "https://firebasestorage.googleapis.com/v0/b/turf-managment-system.appspot.com/o/images.jpeg?alt=media&token=fca5604f-2260-4372-8c61-1396a054cfb8",
+        "Address": "34 Parge Nagar City lawns Puna",
+        "description": "City lawn  turf is one the best football and Cricket turf in puna, located at parge nagar. There are three arena which are perfect fields for  700sq.cm * 700 sq.cm game. City Turf aims to provide a premium sports and turf experience to all sports enthusiasts.",
+        "TimingSlots": ["6am-7am", "7am-8am", "8am-9am", "9am-10am", "10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm", "8pm-9pm", "9pm-10pm"],
+        "price": " per hour 250-/",
+        "notice": "After 7pm charges will be increased for per hour will be 450-/. "
+
+
+
+    },
+    {
+        "id":4,
+        "Name": "City Lawns Turf 4",
+        "turfimages": "https://firebasestorage.googleapis.com/v0/b/turf-managment-system.appspot.com/o/cricket-turf.jpg?alt=media&token=8396edac-b8e3-4085-be60-23268d7c4648",
+        "Address": "34 Parge Nagar City lawns Puna",
+        "description": "City lawn  turf is one the best football and Cricket turf in puna, located at parge nagar. There are three arena which are perfect fields for  700sq.cm * 700 sq.cm game. City Turf aims to provide a premium sports and turf experience to all sports enthusiasts.",
+        "TimingSlots": ["6am-7am", "7am-8am", "8am-9am", "9am-10am", "10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm", "8pm-9pm", "9pm-10pm"],
+        "price": " per hour 350-/",
+        "notice": "After 7pm charges will be increased for per hour will be 550-/. "
+
+
+
+    },
+
+    {
+        "id":5,
+        "Name": "City Lawns Turf 5",
+        "turfimages": "https://firebasestorage.googleapis.com/v0/b/turf-managment-system.appspot.com/o/download%20(2).jpeg?alt=media&token=04cd7b88-f9f5-40bf-86e1-cf2828b0ac77",
+        "Address": "34 Parge Nagar City lawns Puna",
+        "description": "City lawn  turf is one the best football and Cricket turf in puna, located at parge nagar. There are three arena which are perfect fields for  700sq.cm * 700 sq.cm game. City Turf aims to provide a premium sports and turf experience to all sports enthusiasts.",
+        "TimingSlots": ["6am-7am", "7am-8am", "8am-9am", "9am-10am", "10am-11am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "3pm-4pm", "4pm-5pm", "5pm-6pm", "6pm-7pm", "7pm-8pm", "8pm-9pm", "9pm-10pm"],
+        "price": " per hour 450-/",
+        "notice": "After 7pm charges will be increased for per hour will be 650-/. "
+
+
+
+    }
+
+    ]
+
+
+
+
+
