@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -29,7 +30,27 @@ import BookIcon from '@mui/icons-material/Book';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import GrassIcon from '@mui/icons-material/Grass';
 import { Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'; // Updated import statements
+// import Register from "./Register"
+import Error from "./Error";
+import Orders from "./Orders"
+import Home from './Home';
+import Footer from './Footer';
+import About from './About';
+import Contact from './Contact';
+import CreateTurf from './CreateTurf';
+import MyTurf from './MyTurf';
+import BookTurf from './BookTurf';
+// import { Home } from '@mui/icons-material';
+import Singleturf from './Singleturf';
+import CreateAdmin from './CreateAdmin';
+import ViewAdmin from './ViewAdmin';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/UserSlice';
 const drawerWidth = 240;
+
+
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -76,6 +97,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
+
 const Header = () => {
   const theme = useTheme();
   const [open, setOpen] = useState();
@@ -83,8 +105,22 @@ const Header = () => {
   const handleDrawerOpen = () => {
     setOpen(!open);
   };
+  const navigate = useNavigate();
 
-  
+  const dispatch = useDispatch();
+  const handleClick = () => {
+       
+      dispatch(login({
+        name: null,
+        Password: null,
+        logged: false,
+       
+      }))
+      navigate('/')
+
+
+    }
+
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -95,17 +131,26 @@ const Header = () => {
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
-            edge="start"
+            // edge="start"
             sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" >
             <GrassIcon />
-            PROJECT-TRUF
+            PROJECT-TURF
+          </Typography>
+          <Typography variant="h12" noWrap component="div">
+            welcome sadik
           </Typography>
         </Toolbar>
+        
       </AppBar>
+      <ClickAwayListener
+        mouseEvent="onMouseDown"
+        touchEvent="onTouchStart"
+        onClickAway={() => open && handleDrawerOpen()}
+      >
       <Drawer
         sx={{
           width: drawerWidth,
@@ -124,198 +169,216 @@ const Header = () => {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
-        <Divider />
+        {/* <Divider /> */}
 
         <List onClick={handleDrawerOpen}>
-        <Link to="/Home" style={{ textDecoration: 'none' }}>
-          <ListItem >
-          
-            <ListItemButton >
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              Home
-              <ListItemText />
-            </ListItemButton>
-            
-          </ListItem>
+          <Link to="/Home" style={{ textDecoration: 'none' }}>
+            <ListItem >
+
+              <ListItemButton >
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                Home
+                <ListItemText />
+              </ListItemButton>
+
+            </ListItem>
+          </Link>
+        </List>
+        {/* <Divider />
+        <Divider /> */}
+        <List onClick={handleDrawerOpen}>
+          <Link to="/About" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton >
+                <ListItemIcon>
+                  <PersonPinIcon />
+                </ListItemIcon >
+                About
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        </List>
+        {/* <Divider />
+        <Divider /> */}
+        <List onClick={handleDrawerOpen}>
+          <Link to="/BookTurf" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton >
+                <ListItemIcon>
+                  <BookIcon />
+                </ListItemIcon >
+                BookTurf
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
         <Divider />
         <List onClick={handleDrawerOpen}>
-        <Link to="/About" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton >
-              <ListItemIcon>
-                <PersonPinIcon />
-              </ListItemIcon >
-              About
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/Contact" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton >
+                <ListItemIcon>
+                  <CallIcon />
+                </ListItemIcon>
+                Contact
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
         <Divider />
         <List onClick={handleDrawerOpen}>
-        <Link to="/BookTurf" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton >
-              <ListItemIcon>
-                <BookIcon />
-              </ListItemIcon >
-              BookTurf
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/Orders" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton>
+                <ListItemIcon>
+                  <AddShoppingCartIcon />
+                </ListItemIcon>
+                Orders
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
-        <Divider />
-        <List onClick={handleDrawerOpen}>
-        <Link to="/Contact" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton >
-              <ListItemIcon>
-                <CallIcon />
-              </ListItemIcon>
-              Contact
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-          </Link>
-        </List>
-        <Divider />
-        <Divider />
-        <List  onClick={handleDrawerOpen}>
-        <Link to="/Orders" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton>
-              <ListItemIcon>
-                <AddShoppingCartIcon />
-              </ListItemIcon>
-              Orders
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-          </Link>
-        </List>
-        <Divider />
-        
+
 
         <Divider />
         <List>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <AdminPanelSettingsIcon />
-              </ListItemIcon>
-              Create Admin
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/CreateAdmin" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <AdminPanelSettingsIcon />
+                </ListItemIcon>
+                Create Admin
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
         <Divider />
         <List>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <SupervisorAccountIcon />
-              </ListItemIcon>
-              view Admins
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/ViewAdmin" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <SupervisorAccountIcon />
+                </ListItemIcon>
+                view Admins
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
         <Divider />
         <List>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <PageviewIcon />
-              </ListItemIcon>
-              view inquires
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <PageviewIcon />
+                </ListItemIcon>
+                view inquires
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
         <Divider />
-        <List  onClick={handleDrawerOpen}>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <SportsIcon />
-              </ListItemIcon>
-              ground/turfs
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+        <List onClick={handleDrawerOpen}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <SportsIcon />
+                </ListItemIcon>
+                ground/turfs
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
-        
+
         <Divider />
         <List>
-        <Link to="/CreateTurf" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <AddIcon />
-              </ListItemIcon>
-              Create turf
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
-          </Link>
-        </List>
-        <Divider />
-        <Divider />
-        <List>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <EditCalendarIcon />
-              </ListItemIcon>
-              My Orders
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/CreateTurf" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <AddIcon />
+                </ListItemIcon>
+                Create turf
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
         <Divider />
         <Divider />
         <List>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <ListItem >
-            <ListItemButton onClick={handleDrawerOpen}>
-              <ListItemIcon>
-                <CallIcon />
-              </ListItemIcon>
-              Contact
-              <ListItemText />
-            </ListItemButton>
-          </ListItem>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <EditCalendarIcon />
+                </ListItemIcon>
+                My Orders
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
           </Link>
         </List>
+        <Divider />
+        <Divider />
+        <List>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <ListItem >
+              <ListItemButton onClick={handleDrawerOpen}>
+                <ListItemIcon>
+                  <CallIcon />
+                </ListItemIcon>
+                Contact
+                <ListItemText />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        </List>
+        <button onClick={handleClick}>logout</button>
         <Divider />
 
       </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
+      </ClickAwayListener>
+      <Main open={open} >
+        <DrawerHeader  />
+        <Routes >
+          <Route path="/Home" exact element={<Home />} />
+          <Route path="/Orders" exact element={<Orders />} />
+          <Route path="/About" exact element={<About />} />
+          <Route path="/Contact" exact element={<Contact />} />
+          <Route path="/CreateTurf" exact element={<CreateTurf />} />
+          <Route path="/MyTurf" exact element={<MyTurf />} />
+          <Route path="/seeTurf" exact element={<seeTurf />} />
+          <Route path="/BookTurf" element={<BookTurf />} />
+          <Route path="*" element={<Error/>} />
+          <Route path="/CreateAdmin" element={<CreateAdmin />} />
+          <Route path="/ViewAdmin" element={<ViewAdmin />} />
+          <Route path="/SingleTurf/:id" element={<Singleturf />} />
 
+        </Routes>
+       
       </Main>
+      
     </Box>
   );
 

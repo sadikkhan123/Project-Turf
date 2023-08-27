@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import data from "../data.json"
+import { Link } from 'react-router-dom';
 
 
 const BookTurf = () => {
@@ -33,9 +34,10 @@ const BookTurf = () => {
       </CardContent>
     </CardActionArea>
     <CardActions>
+      <Link to={`/Singleturf/${data.id}`}>
       <Button size="small" color="primary">
-        Share
-      </Button>
+        view
+      </Button></Link>
     </CardActions>
   </Card>
           )
