@@ -72,7 +72,7 @@ const reg = new RegExp("[a-z,A-Z,0-9,]");
                 type='password' value={Password} onChange={(e) => handleValidation(e)}   required={true} />
               {/* <TextField label="Confirm Password" /> */}
 
-              <Button variant="contained" type='submit'>Singin</Button>
+              <Button variant="contained" type='submit'>Signin</Button>
             </Stack>
           </Box>
         </form>
