@@ -56,7 +56,7 @@ const reg = new RegExp("[a-z,A-Z,0-9,]");
         
         }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }} >
-            <Typography variant='h4' align='center'>SingIn</Typography>
+            <Typography variant='h4' align='center'>Sign In</Typography>
             <Stack
               direction="column"
               justifyContent="center"
@@ -72,7 +72,7 @@ const reg = new RegExp("[a-z,A-Z,0-9,]");
                 type='password' value={Password} onChange={(e) => handleValidation(e)}   required={true} />
               {/* <TextField label="Confirm Password" /> */}
 
-              <Button variant="contained" type='submit'>Signin</Button>
+              <Button variant="contained" type='submit'>Sign in</Button>
             </Stack>
           </Box>
         </form>
