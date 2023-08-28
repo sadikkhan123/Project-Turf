@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import Button from '@mui/material/Button';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -354,7 +355,7 @@ const Header = () => {
             </ListItem>
           </Link>
         </List>
-        <button onClick={handleClick}>logout</button>
+        <Button  variant="contained" onClick={handleClick}>logout</Button>
         <Divider />
 
       </Drawer>
