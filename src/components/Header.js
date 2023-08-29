@@ -110,13 +110,15 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const handleClick = () => {
-       
-      dispatch(login({
+    if (true) {
+      dispatch(login.login({
         name: null,
         Password: null,
         logged: false,
        
       }))
+      navigate('/Home')
+    }
       navigate('/')
 
 
@@ -363,6 +365,7 @@ const Header = () => {
       <Main open={open} >
         <DrawerHeader  />
         <Routes >
+          <Route path="/" exact element={<Home />} />
           <Route path="/Home" exact element={<Home />} />
           <Route path="/Orders" exact element={<Orders />} />
           <Route path="/About" exact element={<About />} />
@@ -371,10 +374,10 @@ const Header = () => {
           <Route path="/MyTurf" exact element={<MyTurf />} />
           <Route path="/seeTurf" exact element={<seeTurf />} />
           <Route path="/BookTurf" element={<BookTurf />} />
-          <Route path="*" element={<Error/>} />
           <Route path="/CreateAdmin" element={<CreateAdmin />} />
           <Route path="/ViewAdmin" element={<ViewAdmin />} />
           <Route path="/SingleTurf/:id" element={<Singleturf />} />
+          <Route path="*" element={<Error/>} />
 
         </Routes>
        

@@ -18,10 +18,10 @@ const Sign = () => {
     e.preventDefault();
     validate();
     if (true) {
-      dispatch(login({
+      dispatch(login.login({
         name: name,
         Password: Password,
-        loggedin: true
+        logged: true
       }))
       // navigate('/Home')
 
