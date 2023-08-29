@@ -40,9 +40,17 @@ const Sign = () => {
  }
  const handleValidation = (e) => {
   setName(e.target.value);
+ 
+ 
+  setValid(reg.test(e.target.value));
+  
+};
+const handleValidation1 = (e) => {
+
   setPassword(e.target.value);
  
   setValid(reg.test(e.target.value));
+  
 };
 const reg = new RegExp("[a-z,A-Z,0-9,]");
   return (
@@ -69,7 +77,7 @@ const reg = new RegExp("[a-z,A-Z,0-9,]");
                 variant='outlined' value={name} onChange={(e) =>handleValidation(e)}    required={true}/>
               <TextField label="enter Password (required)"
                 variant='outlined'error={reg?!valid:valid}
-                type='password' value={Password} onChange={(e) => handleValidation(e)}   required={true} />
+                type='password' value={Password} onChange={(e) => handleValidation1(e)}   required={true} />
               {/* <TextField label="Confirm Password" /> */}
 
               <Button variant="contained" type='submit'>Sign in</Button>
