@@ -25,7 +25,7 @@ const Sign = () => {
       }))
       // navigate('/Home')
 
-
+ 
     }
 
   }

@@ -31,8 +31,8 @@ const {id} =useParams();
   }
 
 
-  console.log(values)
-  console.log(date)
+  // console.log(values)
+  // console.log(date)
   return (
     <div>
 
