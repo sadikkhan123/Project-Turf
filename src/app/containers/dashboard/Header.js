@@ -33,22 +33,22 @@ import GrassIcon from "@mui/icons-material/Grass";
 import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router-dom"; // Updated import statements
 // import Register from "./Register"
-import Error from "./Error";
-import Orders from "./Orders";
-import Home from "./Home";
-import Footer from "./Footer";
-import About from "./About";
-import Contact from "./Contact";
-import CreateTurf from "./CreateTurf";
+import Error from "../static/error";
+import Orders from "../orders/orders";
+import Home from "../dashboard/home";
+// import Footer from "./app/components/footer";
+import About from "../static/about/about";
+import Contact from "../static/contact";
+import CreateTurf from "../turf/createTurf";
 import MyTurf from "../turf/myTurf";
-import BookTurf from "./BookTurf";
+import BookTurf from "../turf/bookTurf";
 // import { Home } from '@mui/icons-material';
-import Singleturf from "./Singleturf";
-import CreateAdmin from "./CreateAdmin";
-import ViewAdmin from "./ViewAdmin";
+import Singleturf from "../turf/singleturf";
+import CreateAdmin from "../admin/createAdmin";
+import ViewAdmin from "../admin/viewAdmin";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../features/UserSlice";
+import { login } from "../../../reducers/UserSlice";
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(

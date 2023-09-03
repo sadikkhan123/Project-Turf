@@ -2,7 +2,7 @@ import { TextField, Stack, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../features/UserSlice';
+import { login } from '../../../../reducers/UserSlice';
 import { useNavigate } from 'react-router-dom';
 
 
