@@ -3,7 +3,6 @@ import { userReducer } from './reducers/UserSlice'
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "redux";
-import { loderReducer } from '../features/LoderSlice';
 
 const persistConfig = {
   key: "root",
@@ -12,7 +11,6 @@ const persistConfig = {
 };
 const reducer = combineReducers({
   user: userReducer,
-  loder:loderReducer,
 });
 const persistedReducer = persistReducer(persistConfig, reducer);
 
