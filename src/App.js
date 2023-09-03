@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
+import Header from './app/components/Header';
 import { Route, Router, Routes } from 'react-router-dom';
-import Sign from './components/Sign';
-import Register from './components/Register';
+import Sign from './app/components/Sign';
+import Register from './app/components/Register';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, selectUser } from './features/UserSlice';
+import { login, selectUser } from './reducers/UserSlice';
 function App() {
 
   const a = useSelector(selectUser)
