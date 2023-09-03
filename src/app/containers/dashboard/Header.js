@@ -40,7 +40,7 @@ import Footer from "./Footer";
 import About from "./About";
 import Contact from "./Contact";
 import CreateTurf from "./CreateTurf";
-import MyTurf from "./MyTurf";
+import MyTurf from "../turf/myTurf";
 import BookTurf from "./BookTurf";
 // import { Home } from '@mui/icons-material';
 import Singleturf from "./Singleturf";
