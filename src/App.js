@@ -18,7 +18,7 @@ import BookTurf from "./app/containers/turf/bookTurf";
 import Singleturf from "./app/containers/turf/singleturf";
 import CreateAdmin from "./app/containers/admin/createAdmin";
 import ViewAdmin from "./app/containers/admin/viewAdmin";
-import Header from './app/containers/dashboard/header';
+import Header from './app/components/header';
 function App() {
 
   const a = useSelector(selectUser)

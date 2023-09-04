@@ -48,7 +48,7 @@ import { Route, Routes } from "react-router-dom"; // Updated import statements
 // import ViewAdmin from "../admin/viewAdmin";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../../../reducers/UserSlice";
+import { login } from "../../reducers/UserSlice";
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
