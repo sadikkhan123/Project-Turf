@@ -33,19 +33,19 @@ import GrassIcon from "@mui/icons-material/Grass";
 import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router-dom"; // Updated import statements
 // import Register from "./Register"
-import Error from "../static/error";
-import Orders from "../orders/orders";
-import Home from "../dashboard/home";
-// import Footer from "./app/components/footer";
-import About from "../static/about/about";
-import Contact from "../static/contact";
-import CreateTurf from "../turf/createTurf";
-import MyTurf from "../turf/myTurf";
-import BookTurf from "../turf/bookTurf";
-// import { Home } from '@mui/icons-material';
-import Singleturf from "../turf/singleturf";
-import CreateAdmin from "../admin/createAdmin";
-import ViewAdmin from "../admin/viewAdmin";
+// import Error from "../static/error";
+// import Orders from "../orders/orders";
+// import Home from "../dashboard/home";
+// // import Footer from "./app/components/footer";
+// import About from "../static/about/about";
+// import Contact from "../static/contact";
+// import CreateTurf from "../turf/createTurf";
+// import MyTurf from "../turf/myTurf";
+// import BookTurf from "../turf/bookTurf";
+// // import { Home } from '@mui/icons-material';
+// import Singleturf from "../turf/singleturf";
+// import CreateAdmin from "../admin/createAdmin";
+// import ViewAdmin from "../admin/viewAdmin";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../../reducers/UserSlice";
@@ -361,7 +361,7 @@ const Header = () => {
       <Main open={open}>
         <DrawerHeader />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          {/* <Route path="/" exact element={<Home />} />
           <Route path="/Home" exact element={<Home />} />
           <Route path="/Orders" exact element={<Orders />} />
           <Route path="/About" exact element={<About />} />
@@ -373,7 +373,7 @@ const Header = () => {
           <Route path="/CreateAdmin" element={<CreateAdmin />} />
           <Route path="/ViewAdmin" element={<ViewAdmin />} />
           <Route path="/SingleTurf/:id" element={<Singleturf />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<Error />} /> */}
         </Routes>
       </Main>
     </Box>
