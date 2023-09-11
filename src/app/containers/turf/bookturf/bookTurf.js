@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import data from "../../../resources/data.json"
+import data from "../../../../resources/data.json"
 import { Link } from 'react-router-dom';
 
 const BookTurf = () => {

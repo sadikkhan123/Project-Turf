@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 // import Header from './app/containers/dashboard/header';
 import { Route, Router, Routes } from 'react-router-dom';
-import Sign from './app/containers/onboarding/auth/Sign';
-import Register from './app/containers/onboarding/register/Register';
+import Sign from './app/containers/onboarding/auth/sign';
+import Register from './app/containers/onboarding/register/register';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, selectUser } from './reducers/UserSlice';
-import Error from "./app/containers/static/Error";
-import Orders from "./app/containers/orders/Orders";
-import Home from "./app/containers/dashboard/Home";
+import Error from "./app/containers/static/error/error";
+import Orders from "./app/containers/orders/orders";
+import Home from "./app/containers/dashboard/home/home";
 // import Footer from "./app/components/footer";
-import About from "./app/containers/static/about/About";
-import Contact from "./app/containers/static/Contact";
-import CreateTurf from "./app/containers/turf/CreateTurf";
+import About from "./app/containers/static/about/about";
+import Contact from "./app/containers/static/contact/contact";
+import CreateTurf from "./app/containers/turf/createturf/createTurf";
 import MyTurf from "./app/containers/turf/myTurf/MyTurf";
-import BookTurf from "./app/containers/turf/BookTurf";
+import BookTurf from "./app/containers/turf/bookturf/bookTurf";
 // import { Home } from '@mui/icons-material';
-import Singleturf from "./app/containers/turf/Singleturf";
-import CreateAdmin from "./app/containers/admin/CreateAdmin";
-import ViewAdmin from "./app/containers/admin/ViewAdmin";
-import Header from './app/components/header';
+import Singleturf from "./app/containers/turf/singleturf/singleturf";
+import CreateAdmin from "./app/containers/admin/createAdmin/createAdmin";
+import ViewAdmin from "./app/containers/admin/viewAdmin/viewAdmin";
+import Header from './app/components/header/header';
 function App() {
 
   const a = useSelector(selectUser)

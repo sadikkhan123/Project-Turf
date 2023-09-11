@@ -1,5 +1,5 @@
 import { Card, CardMedia } from '@mui/material';
-import BookButton from './bookTurf'
+import BookButton from '../bookturf/bookTurf'
 import React from 'react'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
