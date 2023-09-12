@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import Header from './app/containers/dashboard/header';
-import { Route, Router, Routes } from 'react-router-dom';
-import Sign from './app/containers/onboarding/auth/sign';
-import Register from './app/containers/onboarding/register/register';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, selectUser } from './reducers/UserSlice';
+import { Route, Router, Routes } from "react-router-dom";
+import Sign from "./app/containers/onboarding/auth/sign";
+import Register from "./app/containers/onboarding/register/register";
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectUser } from "./reducers/userSlice";
 import Error from "./app/containers/static/error/error";
 import Orders from "./app/containers/orders/orders";
 import Home from "./app/containers/dashboard/home/home";
@@ -18,62 +18,100 @@ import BookTurf from "./app/containers/turf/bookturf/bookTurf";
 import Singleturf from "./app/containers/turf/singleturf/singleturf";
 import CreateAdmin from "./app/containers/admin/createAdmin/createAdmin";
 import ViewAdmin from "./app/containers/admin/viewAdmin/viewAdmin";
-import Header from './app/components/header/header';
+import Header from "./app/components/header/header";
 function App() {
+  const a = useSelector(selectUser);
+  console.log(a);
 
-  const a = useSelector(selectUser)
-  console.log(a)
+  const routes = [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/Home",
+      element: <Home />,
+    },
+    {
+      path: "/Orders",
+      element: <Orders />,
+    },
+    {
+      path: "/About",
+      element: <About />,
+    },
+    {
+      path: "/Contact",
+      element: <Contact />,
+    },
+    {
+      path: "/CreateTurf",
+      element: <CreateTurf />,
+    },
+    {
+      path: "/MyTurf",
+      element: <MyTurf />,
+    },
+    {
+      path: "/seeTurf",
+      element: <seeTurf />,
+    },
+    {
+      path: "/BookTurf",
+      element: <BookTurf />,
+    },
+    {
+      path: "/CreateAdmin",
+      element: <CreateAdmin />,
+    },
+    {
+      path: "/ViewAdmin",
+      element: <ViewAdmin />,
+    },
+    {
+      path: "/SingleTurf/:id",
+      element: <Singleturf />,
+    },
+    {
+      path: "*",
+      element: <Error />,
+    },
+  ];
 
-  
   // setOpen={...open}
   return (
-    <div className='App'>
+    <div className="App">
       {/* <Loder/> */}
-        {/* <Box sx={{ display: 'flex' }}>
+      {/* <Box sx={{ display: 'flex' }}>
       <CircularProgress color="success" />
     </Box> */}
       {/* <Header/>
       <Routes> */}
-        {a?.logged ? (<>
-          <Header/>
-      <Routes>
-          {/* // <Route path="*" element={<Header />} /> */}
-          <Route path="/" exact element={<Home />} />
-          <Route path="/Home" exact element={<Home />} />
-          <Route path="/Orders" exact element={<Orders />} />
-          <Route path="/About" exact element={<About />} />
-          <Route path="/Contact" exact element={<Contact />} />
-          <Route path="/CreateTurf" exact element={<CreateTurf />} />
-          <Route path="/MyTurf" exact element={<MyTurf />} />
-          <Route path="/seeTurf" exact element={<seeTurf />} />
-          <Route path="/BookTurf" element={<BookTurf />} />
-          <Route path="/CreateAdmin" element={<CreateAdmin />} />
-          <Route path="/ViewAdmin" element={<ViewAdmin />} />
-          <Route path="/SingleTurf/:id" element={<Singleturf />} />
-          <Route path="*" element={<Error />} />
+      {a?.logged ? (
+        <>
+          <Header />
+          <Routes>
+            {routes.map((route) => (
+              <Route path={route.path} exact element={route.element} />
+            ))}
           </Routes>
-          </>
-        ) : (
-          <>
+        </>
+      ) : (
+        <>
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Sign />} />
-            </Routes>
-            </>
-        )}
-      
-
+          </Routes>
+        </>
+      )}
 
       {/* <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Sign />} />
         <Route path="*" element={<Header />} />
       </Routes> */}
-
-
     </div>
   );
 }
 
 export default App;
-
