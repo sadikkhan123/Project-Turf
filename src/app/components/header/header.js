@@ -1,23 +1,25 @@
 import { React, useState } from "react";
-import Button from "@mui/material/Button";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
+import {
+  Button,
+  ClickAwayListener,
+  Box,
+  Drawer,
+  CssBaseline,
+  Toolbar,
+  List,
+  Typography,
+  Divider,
+  IconButton,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
+import { styled, useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
@@ -30,25 +32,9 @@ import AddIcon from "@mui/icons-material/Add";
 import BookIcon from "@mui/icons-material/Book";
 import EditCalendarIcon from "@mui/icons-material/EditCalendar";
 import GrassIcon from "@mui/icons-material/Grass";
-import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom"; // Updated import statements
-// import Register from "./Register"
-// import Error from "../static/error";
-// import Orders from "../orders/orders";
-// import Home from "../dashboard/home";
-// // import Footer from "./app/components/footer";
-// import About from "../static/about/about";
-// import Contact from "../static/contact";
-// import CreateTurf from "../turf/createTurf";
-// import MyTurf from "../turf/myTurf";
-// import BookTurf from "../turf/bookTurf";
-// // import { Home } from '@mui/icons-material';
-// import Singleturf from "../turf/singleturf";
-// import CreateAdmin from "../admin/createAdmin";
-// import ViewAdmin from "../admin/viewAdmin";
-import { useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../../../reducers/UserSlice";
+import { login } from "../../../reducers/userSlice";
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -361,7 +347,9 @@ const Header = () => {
       <Main open={open}>
         <DrawerHeader />
         <Routes>
-          {/* <Route path="/" exact element={<Home />} />
+          {
+            // TODO: This chunck of code will be used in future
+            /* <Route path="/" exact element={<Home />} />
           <Route path="/Home" exact element={<Home />} />
           <Route path="/Orders" exact element={<Orders />} />
           <Route path="/About" exact element={<About />} />
@@ -373,7 +361,8 @@ const Header = () => {
           <Route path="/CreateAdmin" element={<CreateAdmin />} />
           <Route path="/ViewAdmin" element={<ViewAdmin />} />
           <Route path="/SingleTurf/:id" element={<Singleturf />} />
-          <Route path="*" element={<Error />} /> */}
+          <Route path="*" element={<Error />} /> */
+          }
         </Routes>
       </Main>
     </Box>
